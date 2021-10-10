@@ -12,12 +12,12 @@ script:
 
 
 deploy:
-  provider: elastickboanstalk
-  region: "us-east-2"
-  app: "docker-frontend"
-  env: "Dockerfrontend-env"
-  bucket_name: "elasticbeanstalk-us-east-2-521930490696"
-  bucket_path: "docker-frontend"
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'docker-frontend'
+  env: 'Dockerfrontend-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-521930490696'
+  bucket_path: 'docker-frontend'
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
   on:

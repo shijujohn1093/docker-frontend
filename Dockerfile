@@ -1,14 +1,13 @@
 FROM node:alpine
-
 WORKDIR '/app'
-
 COPY  ./package.json ./
 RUN npm install
-
 COPY ./ ./
+RUN npm run build
 
-CMD ["npm", "run", "start"]
-
+FROM nginx
+EXPOSE 80
+COPY --from=builder /app/build /use/share/nginx/html
 
 # -------------------------------
 # Run custom docekr files
